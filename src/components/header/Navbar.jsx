@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const links = ["Home", "About Us", "Services", "Projects", "News", "Contact"];
+    const links = [
+        { label: "Home", href: "/" },
+        { label: "About Us", href: "/about-us" },
+        { label: "Services", href: "/services" },
+        { label: "Projects", href: "/projects" },
+        { label: "News", href: "/news" },
+        { label: "Contact", href: "/contact" },
+    ];
 
     return (
         <header className="absolute top-0 left-0 w-full h-[60px] md:h-[90px] z-50">
@@ -32,20 +40,26 @@ const Navbar = () => {
                     </div>
                 </button>
 
-                {/* Logo */}
-                <div className="flex items-center h-full mx-auto md:mx-0">
-                    <span className="text-2xl font-bold tracking-wide">RENOVATIO</span>
-                </div>
+               {/* Logo */}
+<div className="flex items-center h-full mx-auto md:mx-0">
+  <img
+    src="/assets/logo/vastu-logo.png"
+    alt="RENOVATIO Logo"
+    className="h-8 w-auto md:h-10 lg:h-12 object-contain"
+  />
+</div>
+
 
                 {/* Desktop Nav Links */}
                 <nav className="hidden md:flex gap-6 text-[15px] font-medium">
                     {links.map((link) => (
-                        <button
+                        <Link
                             key={link}
                             className="relative px-4 py-2 transition-colors duration-300 hover:text-gray-300"
+                            to={link?.href}
                         >
-                            {link}
-                        </button>
+                            {link?.label}
+                        </Link>
                     ))}
                     <button className="ml-4 hover:opacity-80 transition">
                         <Search className="w-5 h-5" />
@@ -61,13 +75,15 @@ const Navbar = () => {
             >
                 <nav className="flex flex-col items-center py-4 space-y-4 text-[16px] font-medium">
                     {links.map((link) => (
-                        <button
+                        <Link
                             key={link}
                             onClick={() => setMenuOpen(false)}
                             className="w-full text-center py-2 hover:text-gray-600 transition"
+                            to={link?.href}
+
                         >
-                            {link}
-                        </button>
+                            {link?.label}
+                        </Link>
                     ))}
 
                     <button className="flex items-center gap-2 py-2 hover:opacity-80 transition">
