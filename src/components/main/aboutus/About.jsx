@@ -1,5 +1,6 @@
 import React from "react";
 import ImageAnimation from "../../custom/ImageAnimation";
+import CompanyTimeline from "./AboutTimeline";
 
 const About = () => {
     return (
@@ -21,7 +22,7 @@ const About = () => {
 
                     {/* Left Content */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                        <h1 className="text-3xl text-[#022c32] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                             About Us
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700">
@@ -48,12 +49,27 @@ const About = () => {
                     </div>
 
                 </div>
-                <p className="mt-3">
-                    Renovatio, we believe that every space has the potential to be transformed into a work of art. With a passion for design and a commitment to excellence, we strive to create captivating interiors that reflect the unique personalities and aspirations of our clients.Our team of talented designers, architects, and craftsmen collaborates closely with each client to understand their vision and bring it to life.Whether it’s a residential project, commercial space, or a hospitality establishment, we approach each project with creativity, professionalism, and a commitment to excellence. Our portfolio showcases a diverse range of projects that highlight our versatility and ability to adapt to different design styles and requirements.What sets us apart is our attention to detail and our commitment to delivering exceptional results. We meticulously plan every aspect of the design process, from space planning and furniture selection to material choices and lighting design. Our goal is to create harmonious environments that not only inspire but also enhance the daily lives of those who inhabit them.
+               <p className="mt-6 text-[#4F696B] text-[16px] leading-relaxed tracking-wide">
+  Renovatio, we believe that every space has the potential to be transformed
+  into a work of art. With a passion for design and a commitment to excellence,
+  we strive to create captivating interiors that reflect the unique
+  personalities and aspirations of our clients. Our team of talented designers,
+  architects, and craftsmen collaborates closely with each client to understand
+  their vision and bring it to life. Whether it’s a residential project,
+  commercial space, or a hospitality establishment, we approach each project
+  with creativity, professionalism, and a commitment to excellence. Our
+  portfolio showcases a diverse range of projects that highlight our versatility
+  and ability to adapt to different design styles and requirements. What sets us
+  apart is our attention to detail and our commitment to delivering exceptional
+  results. We meticulously plan every aspect of the design process, from space
+  planning and furniture selection to material choices and lighting design. Our
+  goal is to create harmonious environments that not only inspire but also
+  enhance the daily lives of those who inhabit them.
+</p>
 
-
-                </p>
             </div>
+            <CompanyTimeline />
+            
         </>
     );
 };

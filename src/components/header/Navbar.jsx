@@ -44,8 +44,8 @@ const Navbar = () => {
 <div className="flex items-center h-full mx-auto md:mx-0">
   <img
     src="/assets/logo/vastu-logo.png"
-    alt="RENOVATIO Logo"
-    className="h-8 w-auto md:h-10 lg:h-12 object-contain"
+    alt=" Logo"
+    className="h-10 w-auto md:h-16 lg:h-18 object-contain"
   />
 </div>
 
