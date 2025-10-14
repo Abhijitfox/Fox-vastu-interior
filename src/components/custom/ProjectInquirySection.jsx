@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProjectInquirySection = () => {
     return (
@@ -20,12 +21,13 @@ const ProjectInquirySection = () => {
                     Do not hesitate to say Zdravst
                 </p>
 
-                <button
-                    className="border border-white text-white px-6 py-3 rounded-full text-lg hover:bg-white hover:text-black transition duration-300 flex items-center gap-2 mx-auto"
-                >
-                    Let’s Talk
-                    <span className="text-xl">↗</span>
-                </button>
+             <Link
+  to="/contact-us"
+className="border border-white text-white px-6 py-3 rounded-full text-lg transition duration-300 flex items-center gap-2 mx-auto inline-flex hover:bg-white/20 hover:backdrop-blur-sm hover:shadow-lg hover:border-white/60"
+>
+  Let’s Talk
+  <span className="text-xl">↗</span>
+</Link>
             </div>
         </section>
     );

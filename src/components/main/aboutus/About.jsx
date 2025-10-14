@@ -1,8 +1,14 @@
 import React from "react";
 import ImageAnimation from "../../custom/ImageAnimation";
 import CompanyTimeline from "./AboutTimeline";
+import Showcase from "./Showcase";
+import BackgroundImageSwitcher from "../../custom/BackgroundImageSwitcher";
+import ProjectInquirySection from "../../custom/ProjectInquirySection";
 
 const About = () => {
+             
+
+ 
     return (
         <>
             {/* Hero Background Section */}
@@ -15,29 +21,33 @@ const About = () => {
                 {/* Optional overlay for better text visibility */}
                 <div className="absolute inset-0 bg-black/30"></div>
             </div>
-
             {/* About Section */}
-            <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 mt-10 md:mt-16">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-12 lg:gap-20 max-w-7xl mx-auto">
+            <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 bg-white">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-12 lg:gap-20 max-w-7xl mx-auto pt-10">
 
                     {/* Left Content */}
-                    <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4">
-                        <h1 className="text-3xl text-[#022c32] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                            About Us
-                        </h1>
-                        <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700">
-                            Where Imagination Meets Interiors
-                        </p>
-                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md">
-                            We design spaces that reflect your personality and create harmony
-                            between aesthetics and comfort. Our expert designers turn your
-                            vision into timeless interiors tailored to your lifestyle.
-                        </p>
-                    </div>
+                    <div className="w-full md:w-1/2 flex flex-col justify-center items-start text-left space-y-4 px- md:px-0">
+  <h1 
+        className="display-3 fw-bold mb-1"
+        style={{ color: '#00334d' }}
+      >
+        About Us
+      </h1>
+
+  <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700">
+    Where Imagination Meets Interiors
+  </p>
+
+  <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md md:max-w-lg">
+    We design spaces that reflect your personality and create harmony
+    between aesthetics and comfort. Our expert designers turn your
+    vision into timeless interiors tailored to your lifestyle.
+  </p>
+</div>
+
 
                     {/* Right Image Section */}
-                    <div className="w-full md:w-1/2 flex justify-center items-center">
-                        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                    <div className="w-full md:w-1/2 flex justify-center items-center pl-4">
                             <ImageAnimation
                                 images={[
                                     "/assets/images/section-1-1.jpeg",
@@ -45,11 +55,10 @@ const About = () => {
                                     "/assets/images/section-1-3.jpeg",
                                 ]}
                             />
-                        </div>
                     </div>
 
                 </div>
-               <p className="mt-6 text-[#4F696B] text-[16px] leading-relaxed tracking-wide">
+               <p className="mt-6 text-[#4F696B] text-[16px] leading-relaxed tracking-wide ">
   Renovatio, we believe that every space has the potential to be transformed
   into a work of art. With a passion for design and a commitment to excellence,
   we strive to create captivating interiors that reflect the unique
@@ -69,7 +78,14 @@ const About = () => {
 
             </div>
             <CompanyTimeline />
-            
+<Showcase/>
+            <ProjectInquirySection   />
+
+ <BackgroundImageSwitcher
+                image="/assets/images/bg-1.jpeg"
+
+            />
+ 
         </>
     );
 };

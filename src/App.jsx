@@ -6,6 +6,7 @@ import About from "./components/main/aboutus/About";
 
 import { Routes, Route } from "react-router-dom";
 import Contact from "./components/main/aboutus/Contact";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

@@ -42,11 +42,14 @@ const Navbar = () => {
 
                {/* Logo */}
 <div className="flex items-center h-full mx-auto md:mx-0">
+    <Link to="/">
   <img
+  
     src="/assets/logo/vastu-logo.png"
     alt=" Logo"
     className="h-10 w-auto md:h-16 lg:h-18 object-contain"
   />
+  </Link>
 </div>
 
 
