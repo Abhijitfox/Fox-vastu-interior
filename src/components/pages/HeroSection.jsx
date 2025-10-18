@@ -4,10 +4,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CustomCarousel from "../custom/CustomCarousel";
 import ProjectInquirySection from "../custom/ProjectInquirySection";
-import Section1 from "./Section1";
-import Section2 from "./Section2";
-import Section3 from "./Section3";
-import ScrollTextBridge from "./ScrollTextBridge";
+import Section1 from "../main/home/Section1";
+import Section2 from "../main/home/Section2";
+import Section3 from "../main/home/Section3";
+import ScrollTextBridge from "../custom/ScrollTextBridge";
 import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
 
 

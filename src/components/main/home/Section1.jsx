@@ -37,19 +37,20 @@ const Section1 = () => {
                     Elevate Your <br /> Interiors
                 </h1>
 
-                <div className="flex justify-between items-center border-b border-gray-300 pb-3 mb-10">
-                    <p className="text-lg md:text-xl font-semibold">
-                        Designing Interiors That Leave a Lasting Impression
-                    </p>
-                    <a
-                        href="#"
-                        className="text-sm font-medium text-[#0b2545] hover:underline flex items-center gap-2"
-                    >
-                        All Services
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-xs" />
-                    </a>
+               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-gray-300 pb-3 mb-10 text-center sm:text-left gap-3 sm:gap-0">
+  <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 leading-snug">
+    Designing Interiors That Leave a Lasting Impression
+  </p>
 
-                </div>
+  <a
+    href="#"
+    className="text-sm font-medium text-[#0b2545] hover:underline flex items-center justify-center sm:justify-end gap-2 transition-all"
+  >
+    All Services
+    <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-xs" />
+  </a>
+</div>
+
 
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-4 mb-20">

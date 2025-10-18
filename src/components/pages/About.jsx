@@ -1,9 +1,9 @@
 import React from "react";
-import ImageAnimation from "../../custom/ImageAnimation";
-import CompanyTimeline from "./AboutTimeline";
-import Showcase from "./Showcase";
-import BackgroundImageSwitcher from "../../custom/BackgroundImageSwitcher";
-import ProjectInquirySection from "../../custom/ProjectInquirySection";
+import Showcase from "../main/aboutus/Showcase";
+import ImageAnimation from "../custom/ImageAnimation";
+import ProjectInquirySection from "../custom/ProjectInquirySection";
+import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
+
 
 const About = () => {
              
@@ -47,7 +47,6 @@ const About = () => {
 
 
                     {/* Right Image Section */}
-                    <div className="w-full md:w-1/2 flex justify-center items-center pl-4">
                             <ImageAnimation
                                 images={[
                                     "/assets/images/section-1-1.jpeg",
@@ -55,7 +54,6 @@ const About = () => {
                                     "/assets/images/section-1-3.jpeg",
                                 ]}
                             />
-                    </div>
 
                 </div>
                <p className="mt-6 text-[#4F696B] text-[16px] leading-relaxed tracking-wide ">
@@ -77,7 +75,6 @@ const About = () => {
 </p>
 
             </div>
-            <CompanyTimeline />
 <Showcase/>
             <ProjectInquirySection   />
 
