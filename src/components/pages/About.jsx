@@ -1,8 +1,11 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import Showcase from "../main/aboutus/Showcase";
 import ImageAnimation from "../custom/ImageAnimation";
 import ProjectInquirySection from "../custom/ProjectInquirySection";
 import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
+import { Link } from "react-router-dom";
 
 
 const About = () => {
@@ -12,15 +15,44 @@ const About = () => {
     return (
         <>
             {/* Hero Background Section */}
-            <div
-                className="relative h-[50vh] sm:h-[60vh] md:h-[68vh] w-full bg-cover bg-center"
-                style={{
-                    backgroundImage: "url('assets/images/footerimg.jpeg')",
-                }}
-            >
-                {/* Optional overlay for better text visibility */}
-                <div className="absolute inset-0 bg-black/30"></div>
-            </div>
+              <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('assets/images/footerimg.jpeg')",
+          }}
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.08 }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 max-w-2xl px-6"
+        >
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+  About Vastu Interior
+</h1>
+<p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 drop-shadow-md">
+  Creating harmonious interiors that blend modern design with timeless Vastu principles.
+</p>
+
+            <Link
+            to="/contact-us"
+            className="inline-block px-8 py-3 bg-white text-[#0b2545] rounded-full font-semibold hover:bg-white/90 transition"
+          >
+            Let’s Talk
+          </Link>
+        </motion.div>
+      </section>
             {/* About Section */}
             <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 bg-white">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-12 lg:gap-20 max-w-7xl mx-auto pt-10">
@@ -74,8 +106,8 @@ const About = () => {
   enhance the daily lives of those who inhabit them.
 </p>
 
-            </div>
 <Showcase/>
+            </div>
             <ProjectInquirySection   />
 
  <BackgroundImageSwitcher

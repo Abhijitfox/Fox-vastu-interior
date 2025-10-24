@@ -1,28 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const ResidentialFeatures = () => {
-  const features = [
-    {
-      title: "Elegant Living Rooms",
-      description:
-        "Warm and sophisticated spaces designed to bring families together in comfort and style.",
-      icon: "https://img.icons8.com/ios-filled/100/0b2545/sofa.png", // online icon
-    },
-    {
-      title: "Modern Kitchens",
-      description:
-        "Combining functionality with design to create perfect cooking and social areas.",
-      icon: "https://img.icons8.com/ios-filled/100/0b2545/kitchen.png", // online icon
-    },
-    {
-      title: "Luxury Bedrooms",
-      description:
-        "Personalized spaces that promote relaxation and reflect your unique personality.",
-      icon: "https://img.icons8.com/ios-filled/100/0b2545/bed.png", // online icon
-    },
-  ];
-
+const FeaturesSection = ({ title, subtitle, features }) => {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Decorative floating circles */}
@@ -37,12 +16,9 @@ const ResidentialFeatures = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-[#0b2545] mb-4"
         >
-          Designed for Modern Living
+          {title}
         </motion.h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-          Every corner of your home deserves thoughtful design, blending comfort
-          and aesthetics in perfect harmony.
-        </p>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-12">{subtitle}</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
@@ -78,4 +54,4 @@ const ResidentialFeatures = () => {
   );
 };
 
-export default ResidentialFeatures;
+export default FeaturesSection;

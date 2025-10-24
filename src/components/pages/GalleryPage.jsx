@@ -2,18 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ShowroomGallery from "../main/services/ShowroomGallery";
-import WhyChooseUs from "../main/services/WhyChooseUs";
 import ProjectInquirySection from "../custom/ProjectInquirySection";
 import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
-
-const galleryImages = [
-  "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/modern-living-room-style-1-1300x1280.jpg",
-  "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/stylish-compositon-modern-living-room-interior-with-frotte-armchair-sofa-plants-painting-wooden-commode-side-table-elegant-home-accessories-template-copy-spacexa-1300x1280.jpg",
-  "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/modern-living-room-style-1-1300x1280.jpg",
-  "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/stylish-compositon-modern-living-room-interior-with-frotte-armchair-sofa-plants-painting-wooden-commode-side-table-elegant-home-accessories-template-copy-spacexa-1300x1280.jpg",
-  "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/modern-living-room-style-1-1300x1280.jpg",
-  "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/stylish-compositon-modern-living-room-interior-with-frotte-armchair-sofa-plants-painting-wooden-commode-side-table-elegant-home-accessories-template-copy-spacexa-1300x1280.jpg",
-];
+import WhyChooseUsSection from "../custom/WhyChooseUsSection";
 
 const GalleryPage = () => {
   const fadeInUp = {
@@ -25,8 +16,35 @@ const GalleryPage = () => {
     }),
   };
 
+const features = [
+  {
+    title: "Tailored Design Approach",
+    description:
+      "We listen, collaborate, and craft interiors that truly reflect your lifestyle and aspirations.",
+    image: "/assets/images/whychooseus1.jpg",
+  },
+  {
+    title: "Attention to Detail",
+    description:
+      "Every finish, texture, and lighting choice is made with precision and purpose.",
+    image: "/assets/images/whychooseus2.jpg",
+  },
+  {
+    title: "Sustainable Materials",
+    description:
+      "We integrate eco-friendly materials and methods to create long-lasting, responsible designs.",
+    image: "/assets/images/whychooseus3.jpg",
+  },
+  {
+    title: "Expert Team",
+    description:
+      "Our designers and craftsmen bring years of expertise to every project.",
+    image: "/assets/images/whychooseus4.jpg",
+  },
+];
+
   return (
-    <div className="w-full overflow-hidden font-sans bg-gray-50 relative">
+        <div className="w-full overflow-hidden text-gray-800 font-sans">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <motion.div
@@ -69,10 +87,16 @@ const GalleryPage = () => {
       {/* Gallery Section */}
     <ShowroomGallery/>
       {/* Featured Projects Section */}
-<WhyChooseUs/>
+<WhyChooseUsSection
+    title="Why Choose Us"
+    subtitle="Experience excellence through creative design, precision execution, and timeless appeal."
+    features={features}
+  />
+<ProjectInquirySection/>
+<BackgroundImageSwitcher
+                image="/assets/images/hero-slideimg-1.jpeg"
 
-      {/* CTA Section */}
-   
+            />   
     </div>
   );
 };

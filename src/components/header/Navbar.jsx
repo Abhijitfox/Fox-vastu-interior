@@ -30,12 +30,12 @@ const Navbar = () => {
   {
     title: "Corporate/ Office Interior Service",
     description: "Smart and professional office spaces.",
-    href: "#",
+    href: "/services/corporate-office-interior-design",
   },
   {
     title: "Hotel Interior Service",
     description: "Luxurious and comfortable hotel interiors.",
-    href: "#",
+    href: "/services/hotel-interior-design",
   },
 ];
 
@@ -73,7 +73,19 @@ const renderDropdown = (items) => (
             : "backdrop-blur-md bg-white/10 border-white/20 text-white"
         }`}
       >
-        {/* Mobile Menu Button */}
+       
+
+        {/* Logo */}
+        <div className="flex items-center h-full">
+          <Link to="/">
+            <img
+              src="/assets/logo/vastu-logo.png"
+              alt="Logo"
+              className="h-10 w-auto md:h-16 lg:h-18 object-contain"
+            />
+          </Link>
+        </div>
+ {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2 rounded-lg transition-transform duration-300"
@@ -86,18 +98,6 @@ const renderDropdown = (items) => (
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </div>
         </button>
-
-        {/* Logo */}
-        <div className="flex items-center h-full">
-          <Link to="/">
-            <img
-              src="/assets/logo/vastu-logo.png"
-              alt="Logo"
-              className="h-10 w-auto md:h-16 lg:h-18 object-contain"
-            />
-          </Link>
-        </div>
-
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium md:ml-12 lg:ml-20 relative">
           {links.map((link) =>
@@ -144,71 +144,69 @@ const renderDropdown = (items) => (
       </div>
 
       {/* Mobile Dropdown */}
-      <div
-        className={`md:hidden absolute left-0 w-full bg-white text-black overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
-          ${
-            menuOpen
-              ? "max-h-[600px] opacity-100 border-b border-gray-200"
-              : "max-h-0 opacity-0"
-          }
-        `}
-      >
-        <nav className="flex flex-col items-center py-4 space-y-4 text-[16px] font-medium">
-          {links.map((link) =>
-            link.dropdown ? (
-              <div key={link.href} className="w-full text-center">
-                <button
-                  onClick={() =>
-                    link.label === "Services"
-                      ? setServicesOpen(!servicesOpen)
-                      : setProjectsOpen(!projectsOpen)
-                  }
-                  className="w-full py-2 flex justify-center items-center gap-1"
-                >
-                  {link.label} <ChevronDown className="w-4 h-4" />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    (link.label === "Services" && servicesOpen) ||
-                    (link.label === "Projects" && projectsOpen)
-                      ? "max-h-[500px] opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  {(link.label === "Services" ? services : projects).map((item) => (
-                    <Link
-                      key={item.href}
-                      to={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block py-2 w-full text-center hover:text-gray-600 transition"
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="w-full text-center py-2 hover:text-gray-600 transition"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
-
-          {/* “Let’s Talk” in Mobile Menu */}
-          <Link
-            to="/contact-us"
-            onClick={() => setMenuOpen(false)}
-            className="px-5 py-2 bg-[#0b2545] text-white rounded-full font-medium text-sm hover:bg-[#163a70] transition"
+   {/* Mobile Dropdown */}
+  <div
+  className={`md:hidden absolute left-0 w-full bg-white text-black overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
+    ${menuOpen ? "max-h-[600px] opacity-100 border-b border-gray-200" : "max-h-0 opacity-0"}
+  `}
+>
+  <nav className="flex flex-col mt-20 px-6 space-y-2 text-[16px] font-medium">
+    {links.map((link) =>
+      link.dropdown ? (
+        <div key={link.href} className="w-full">
+          <button
+            onClick={() =>
+              link.label === "Services"
+                ? setServicesOpen(!servicesOpen)
+                : setProjectsOpen(!projectsOpen)
+            }
+            className="w-full flex justify-between items-center py-2 border-b border-gray-200"
           >
-            Let’s Talk
-          </Link>
-        </nav>
-      </div>
+            {link.label} <ChevronDown className={`w-4 h-4 transition-transform ${((link.label === "Services" && servicesOpen) || (link.label === "Projects" && projectsOpen)) ? "rotate-180" : ""}`} />
+          </button>
+          <div
+            className={`overflow-hidden transition-all duration-300 ${
+              (link.label === "Services" && servicesOpen) ||
+              (link.label === "Projects" && projectsOpen)
+                ? "max-h-[500px] opacity-100"
+                : "max-h-0 opacity-0"
+            }`}
+          >
+            {(link.label === "Services" ? services : projects).map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="block py-2 pl-6 text-gray-700 hover:text-gray-900 transition"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <Link
+          key={link.href}
+          to={link.href}
+          onClick={() => setMenuOpen(false)}
+          className="block py-2 border-b border-gray-200 text-gray-700 hover:text-gray-900 transition"
+        >
+          {link.label}
+        </Link>
+      )
+    )}
+
+    {/* “Let’s Talk” in Mobile Menu */}
+    <Link
+      to="/contact-us"
+      onClick={() => setMenuOpen(false)}
+      className="m-4 px-5 py-2 bg-[#0b2545] border text-white border-gray-300 rounded-full font-medium text-sm hover:bg-white transition shadow-sm text-center"
+    >
+      Let’s Talk
+    </Link>
+  </nav>
+</div>
+
     </header>
   );
 };

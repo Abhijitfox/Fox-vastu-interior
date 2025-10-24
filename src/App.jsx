@@ -11,6 +11,8 @@ import About from "./components/pages/About";
 import Footer from "./components/footer/Footer";
 import ResidentialInterior from "./components/pages/ResidentialInterior";
 import GalleryPage from "./components/pages/GalleryPage";
+import CorporateOfficeInterior from "./components/pages/CorporateOfficeInterior";
+import HotelInteriors from "./components/pages/HotelInteriors";
 function App() {
   return (
     <>
@@ -22,6 +24,9 @@ function App() {
         <Route path="/contact-us" element={<Contact/>} />
         <Route path="/services/showroom-interior-design" element={<ShowroomInterior/>} />
         <Route path="/services/residential-interior-design" element={<ResidentialInterior/>} />
+        <Route path="/services/corporate-office-interior-design" element={<CorporateOfficeInterior/>} />
+        <Route path="/services/hotel-interior-design" element={<HotelInteriors/>} />
+
         <Route path="/gallery" element={<GalleryPage/>} />
       </Routes>
       <Footer />

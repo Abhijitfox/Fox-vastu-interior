@@ -18,12 +18,12 @@ const ProjectInquirySection = () => {
                     Have a project in mind?
                 </h2>
                 <p className="text-lg md:text-2xl mb-8 opacity-90">
-                    Do not hesitate to say Zdravst
+                    Do not hesitate to say Vastu Interior
                 </p>
 
              <Link
   to="/contact-us"
-className="border border-white text-white px-6 py-3 rounded-full text-lg transition duration-300 flex items-center gap-2 mx-auto inline-flex hover:bg-white/20 hover:backdrop-blur-sm hover:shadow-lg hover:border-white/60"
+className="border border-white text-white px-6 py-3 rounded-full text-lg transition duration-300  items-center gap-2 mx-auto inline-flex hover:bg-white/20 hover:backdrop-blur-sm hover:shadow-lg hover:border-white/60"
 >
   Let’s Talk
   <span className="text-xl">↗</span>

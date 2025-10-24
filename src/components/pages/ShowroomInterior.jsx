@@ -1,47 +1,43 @@
-    import React from "react";
-    import { motion } from "framer-motion";
-    import { Link } from "react-router-dom";
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import ShowroomFeatures from "../main/services/ShowroomFeatures";
 import ShowroomGallery from "../main/services/ShowroomGallery";
 import ProjectInquirySection from "../custom/ProjectInquirySection";
 import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
-import WhyChooseUs from "../main/services/WhyChooseUs";
+import WhyChooseUsSection from "../custom/WhyChooseUsSection";
 
     const ShowroomInterior = () => {
-    const features = [
-        {
-        title: "Luxury Showroom Layout",
-        description: "Optimized space to showcase products elegantly.",
-        icon: "/assets/icons/layout.svg",
-        },
-        {
-        title: "Lighting & Ambience",
-        description: "Create the perfect mood for customers.",
-        icon: "/assets/icons/light.svg",
-        },
-        {
-        title: "Interactive Displays",
-        description: "Engage visitors with modern interactive setups.",
-        icon: "/assets/icons/display.svg",
-        },
-    ];
 
-    const galleryImages = [
-        "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/modern-living-room-style-1-1300x1280.jpg",
-        "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/stylish-compositon-modern-living-room-interior-with-frotte-armchair-sofa-plants-painting-wooden-commode-side-table-elegant-home-accessories-template-copy-spacexa-1300x1280.jpg",
-        "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/modern-living-room-style-1-1300x1280.jpg",
-        "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/stylish-compositon-modern-living-room-interior-with-frotte-armchair-sofa-plants-painting-wooden-commode-side-table-elegant-home-accessories-template-copy-spacexa-1300x1280.jpg",
-        "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/modern-living-room-style-1-1300x1280.jpg",
-        "https://themes.pixelwars.org/renovatio/demo-01/wp-content/uploads/sites/2/2023/06/stylish-compositon-modern-living-room-interior-with-frotte-armchair-sofa-plants-painting-wooden-commode-side-table-elegant-home-accessories-template-copy-spacexa-1300x1280.jpg",
-    ];
+const features = [
+  {
+    title: "Tailored Design Approach",
+    description:
+      "We listen, collaborate, and craft interiors that truly reflect your lifestyle and aspirations.",
+    image: "/assets/images/whychooseus1.jpg",
+  },
+  {
+    title: "Attention to Detail",
+    description:
+      "Every finish, texture, and lighting choice is made with precision and purpose.",
+    image: "/assets/images/whychooseus2.jpg",
+  },
+  {
+    title: "Sustainable Materials",
+    description:
+      "We integrate eco-friendly materials and methods to create long-lasting, responsible designs.",
+    image: "/assets/images/whychooseus3.jpg",
+  },
+  {
+    title: "Expert Team",
+    description:
+      "Our designers and craftsmen bring years of expertise to every project.",
+    image: "/assets/images/whychooseus4.jpg",
+  },
+];
 
-    const steps = [
-        "Concept & Ideation",
-        "Space Planning & Layout",
-        "Design Development",
-        "Final Execution",
-    ];
 
+   
     return (
         <div className="w-full overflow-hidden text-gray-800 font-sans">
       {/* Hero Section */}
@@ -87,8 +83,11 @@ animate={{ scale: 1.09 }}
         {/* Gallery Section */}
       <ShowroomGallery/>
         {/* Process / Steps Section */}
-<WhyChooseUs/>
-
+<WhyChooseUsSection
+    title="Why Choose Us"
+    subtitle="Experience excellence through creative design, precision execution, and timeless appeal."
+    features={features}
+  />
         {/* Project Inquiry Section */}
 <ProjectInquirySection />
             <BackgroundImageSwitcher

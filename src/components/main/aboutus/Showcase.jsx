@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion";
 
 const Showcase = () => {
      const images = [
@@ -13,7 +14,7 @@ const Showcase = () => {
   return (
     <div className='bg-white'>
 
-    <div className="container py-5">
+    <div className=" py-5">
   {/* --- Header Section --- */}
   <div className="row mb-4">
     <div className="col-12">
@@ -28,29 +29,66 @@ const Showcase = () => {
   </div>
 
   {/* --- Image Grid Section --- */}
-  <div className="row g-3">
-    {images.map((image, index) => (
-      <div 
-        key={index}
-        className="col-12 col-md-6 col-lg-4 d-flex justify-content-center"
-      >
-        <div 
-          className="w-100 overflow-hidden rounded shadow-sm"
-          style={{ height: '320px' }} // fixed equal height for all images
-        >
-          <img
-            src={image}
-            alt={`Design showcase image ${index + 1}`}
-            className="img-fluid w-100 h-100"
-            style={{
-              objectFit: 'cover', // keeps aspect ratio, fills box
-              objectPosition: 'center', // centers image crop
-            }}
-          />
+ <div className="row g-4">
+          {images.map((image, index) => (
+            <motion.div
+              key={index}
+              className="col-12 col-sm-6 col-lg-4 d-flex justify-content-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
+            >
+              <motion.div
+                className="overflow-hidden rounded-4 shadow-sm position-relative w-100"
+                style={{ height: "320px", cursor: "pointer" }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Image */}
+                <motion.img
+                  src={image}
+                  alt={`Design showcase ${index + 1}`}
+                  className="img-fluid w-100 h-100"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    transition: "transform 0.4s ease",
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                />
+
+                {/* Overlay on hover */}
+                <motion.div
+                  className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,51,77,0.7) 100%)",
+                    color: "white",
+                    fontWeight: "500",
+                    fontSize: "1.2rem",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  <motion.span
+                    initial={{ y: 20 }}
+                    whileHover={{ y: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    View Design
+                  </motion.span>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
-      </div>
-    ))}
-  </div>
 </div>
     </div>
 
@@ -58,3 +96,4 @@ const Showcase = () => {
 }
 
 export default Showcase
+

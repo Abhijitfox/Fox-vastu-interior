@@ -1,6 +1,6 @@
     import { motion } from "framer-motion";
 
-    const WhyChooseUs = () => {
+    const WhyChooseUsSection = () => {
     const features = [
         {
         title: "Creative & Functional Designs",
@@ -104,4 +104,4 @@
     );
     };
 
-    export default WhyChooseUs;
+    export default WhyChooseUsSection;
