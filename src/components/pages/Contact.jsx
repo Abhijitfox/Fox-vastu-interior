@@ -7,12 +7,10 @@ const Contact = () => {
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState("");
 
-  // ✅ Scroll to top when the page loads
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  // ✅ Handle form submission with EmailJS
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSending(true);
@@ -40,6 +38,16 @@ const Contact = () => {
   };
 
   return (
+    <>
+    <Helmet>
+  <title>Contact VastuVibe | Start Your Interior Design Project</title>
+  <meta
+    name="description"
+    content="Have a project in mind? Contact VastuVibe for residential, commercial, showroom, and hotel interior design services in India."
+  />
+  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/contact-us" />
+</Helmet>
+
     <div className="font-sans text-gray-800">
       {/* Hero Image */}
       <div
@@ -51,36 +59,41 @@ const Contact = () => {
 
       {/* Contact Section */}
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-20 flex flex-col md:flex-row items-start gap-16">
-        {/* Left Section */}
-        <div className="md:w-1/2">
-          <h1 className="text-[64px] font-bold text-[#00383f] leading-none">
-            Let's Talk
-          </h1>
-          <p className="text-lg mt-4 text-gray-700">
-            Got a project on your mind? Let’s discuss about the details.
-          </p>
+       {/* Left Section */}
+<div className="md:w-1/2">
+  <h1 className="text-[64px] font-bold text-[#00383f] leading-none">
+    Let's Talk
+  </h1>
 
-          <div className="mt-10">
-            <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">
-              Call Us
-            </p>
-            <p className="text-2xl font-semibold text-[#00383f] mt-1">
-              +91 8879864151
-            </p>
-          </div>
+  <p className="text-lg mt-4 text-gray-700">
+    Got a project on your mind? Let’s discuss about the details.
+  </p>
 
-          <div className="flex items-center gap-4 mt-8 text-[#00383f] text-lg">
-            <a href="#" className="hover:text-gray-600">
-              <FaFacebookF />
-            </a>
-            <a href="#" className="hover:text-gray-600">
-              <FaTwitter />
-            </a>
-            <a href="#" className="hover:text-gray-600">
-              <FaYoutube />
-            </a>
-          </div>
-        </div>
+  <div className="mt-10">
+    <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+      Call Us
+    </h2>
+    <p className="text-2xl font-semibold text-[#00383f] mt-1">
+      +91 8879864151
+    </p>
+  </div>
+
+  <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500 mt-10">
+    Follow Us
+  </h2>
+  <div className="flex items-center gap-4 mt-3 text-[#00383f] text-lg">
+    <a href="#" aria-label="Facebook" className="hover:text-gray-600">
+      <FaFacebookF />
+    </a>
+    <a href="#" aria-label="Twitter" className="hover:text-gray-600">
+      <FaTwitter />
+    </a>
+    <a href="#" aria-label="YouTube" className="hover:text-gray-600">
+      <FaYoutube />
+    </a>
+  </div>
+</div>
+
 
         {/* Right Section (Form) */}
         <div className="md:w-1/2 w-full">
@@ -124,6 +137,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

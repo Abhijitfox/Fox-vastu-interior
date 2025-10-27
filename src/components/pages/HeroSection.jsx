@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CustomCarousel from "../custom/CustomCarousel";
@@ -74,8 +75,23 @@ export default function HeroSection() {
     const prevSlide = () =>
         setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
+     const handleScroll = () => {
+    const next = document.getElementById("inquiry-section");
+    next?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+
     return (
         <>
+<Helmet>
+  <title>VastuVibe | Luxury & Vastu Interior Designers in India</title>
+  <meta
+    name="description"
+    content="VastuVibe specializes in luxury, modern, and Vastu-aligned interior designs for homes, showrooms, offices, and hotels across India."
+  />
+  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/" />
+</Helmet>
+
             <div className="relative w-full h-screen overflow-hidden bg-black">
                 {/* Background images */}
                 <div className="absolute inset-0 z-0">
@@ -109,6 +125,7 @@ export default function HeroSection() {
                     <div className="flex flex-col gap-y-8 justify-center items-start text-white z-10 max-w-xs sm:max-w-md md:max-w-2xl">
                         {/* Title */}
                         <motion.h1
+                            as="h1"
                             key={slides[current].title}
                             initial={{ opacity: 0, x: 100 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -131,12 +148,18 @@ export default function HeroSection() {
                     </div>
 
                     {/* Right scroll down */}
-                    <div className="md:flex hidden  flex-col justify-center items-center text-white space-y-4 sm:space-y-6 md:space-y-12 lg:space-y-16">
+                    <div    
+                        className="md:flex hidden  flex-col justify-center items-center text-white space-y-4 sm:space-y-6 md:space-y-12 lg:space-y-16">
                         <FontAwesomeIcon
+                        onClick={handleScroll}
+
                             icon={faArrowDown}
-                            className="text-sm sm:text-lg md:text-xl lg:text-2xl animate-bounce"
+                            className="text-sm sm:text-lg md:text-xl lg:text-2xl animate-bounce cursor-pointer"
                         />
-                        <div className="text-[8px] sm:text-[10px] md:text-sm tracking-widest uppercase rotate-90">
+                        <div
+                         onClick={handleScroll}
+
+                        className="text-[8px] sm:text-[10px] md:text-sm tracking-widest uppercase rotate-90 cursor-pointer">
                             SCROLL DOWN
                         </div>
                     </div>

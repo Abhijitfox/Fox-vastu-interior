@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const ProjectInquirySection = () => {
     return (
         <section
+        id="inquiry-section"
             className="relative flex items-center justify-center text-center h-[60vh] bg-cover bg-center"
             style={{
                 backgroundImage: "url('/assets/images/project-bg.jpg')", // replace with your background

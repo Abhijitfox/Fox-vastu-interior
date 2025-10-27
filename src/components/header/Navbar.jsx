@@ -11,7 +11,7 @@ const Navbar = () => {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about-us" },
     { label: "Services", href: "/services", dropdown: true },
-    { label: "Projects", href: "/projects", dropdown: true },
+    // { label: "Projects", href: "/projects", dropdown: true },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact-us" },
   ];
@@ -40,11 +40,11 @@ const Navbar = () => {
 ];
 
 
-  const projects = [
-    { title: "Residential", description: "Luxury homes and apartments", href: "/projects/residential" },
-    { title: "Commercial", description: "Offices, shops, and showrooms", href: "/projects/commercial" },
-    { title: "Hospitality", description: "Hotels, resorts, restaurants", href: "/projects/hospitality" },
-  ];
+  // const projects = [
+  //   { title: "Residential", description: "Luxury homes and apartments", href: "/projects/residential" },
+  //   { title: "Commercial", description: "Offices, shops, and showrooms", href: "/projects/commercial" },
+  //   { title: "Hospitality", description: "Hotels, resorts, restaurants", href: "/projects/hospitality" },
+  // ];
 
 const renderDropdown = (items) => (
   <div className="absolute top-full left-1/2 transform -translate-x-1/2 bg-white text-black shadow-lg rounded-lg w-[250px] z-50 overflow-hidden">

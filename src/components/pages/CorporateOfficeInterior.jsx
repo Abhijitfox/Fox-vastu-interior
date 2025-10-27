@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import FeaturesSection from '../custom/FeaturesSection';
 import GallerySection from '../custom/GallerySection';
 import WhyChooseUsSection2 from '../custom/WhyChooseUsSection2';
@@ -62,6 +63,16 @@ const residentialFeaturesforwhychoseus = [
   },
 ];
   return (
+    <>
+    <Helmet>
+  <title>Corporate & Office Interior Design | VastuVibe</title>
+  <meta
+    name="description"
+    content="Design smart, modern, and productivity-focused office spaces that inspire teams and make lasting impressions."
+  />
+  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/services/corporate-office-interior-design" />
+</Helmet>
+
     <div className="w-full overflow-hidden text-gray-800 font-sans">
           <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         {/* Background Image with Scale Animation */}
@@ -90,9 +101,9 @@ const residentialFeaturesforwhychoseus = [
           transition={{ duration: 1 }}
           className="relative z-10 max-w-2xl px-6"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
   Corporate Office Interior
-</h1>
+</h2>
 <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6">
   Designing modern workspaces that inspire productivity, collaboration, and success.
 </p>
@@ -117,6 +128,7 @@ const residentialFeaturesforwhychoseus = [
       {/* Background Transition */}
       <BackgroundImageSwitcher image="/assets/images/hero-slideimg-1.jpeg" />
     </div>
+    </>
   )
 }
 

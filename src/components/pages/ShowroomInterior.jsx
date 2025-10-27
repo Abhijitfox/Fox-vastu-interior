@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ShowroomFeatures from "../main/services/ShowroomFeatures";
 import ShowroomGallery from "../main/services/ShowroomGallery";
 import ProjectInquirySection from "../custom/ProjectInquirySection";
@@ -39,6 +40,16 @@ const features = [
 
    
     return (
+      <>
+      <Helmet>
+  <title>Showroom Interior Design Services | VastuVibe</title>
+  <meta
+    name="description"
+    content="Create premium, attractive showroom spaces that impress customers and elevate your brand. VastuVibe specializes in modern showroom interiors."
+  />
+  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/services/showroom-interior-design" />
+</Helmet>
+
         <div className="w-full overflow-hidden text-gray-800 font-sans">
       {/* Hero Section */}
 <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
@@ -61,9 +72,9 @@ animate={{ scale: 1.09 }}
     transition={{ duration: 1 }}
     className="relative z-10 max-w-2xl px-6"
   >
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
       Showroom Interior Design
-    </h1>
+    </h2>
     <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6">
       Transforming commercial spaces into immersive brand experiences
     </p>
@@ -95,6 +106,7 @@ animate={{ scale: 1.09 }}
 
             />
         </div>
+      </>
     );
     };
 

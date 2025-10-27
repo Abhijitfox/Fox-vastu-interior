@@ -37,6 +37,16 @@ const hotelImages = [
   "/assets/images/hotel-interior-6.avif",
 ];
   return (
+    <>
+    <Helmet>
+  <title>Hotel Interior Design Services | VastuVibe</title>
+  <meta
+    name="description"
+    content="We design luxurious, welcoming, and memorable hotel interiors that enhance guest experience and reflect brand identity."
+  />
+  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/services/hotel-interior-design" />
+</Helmet>
+
     <div className="w-full overflow-hidden text-gray-800 font-sans">
                 <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         {/* Background Image with Scale Animation */}
@@ -65,9 +75,9 @@ const hotelImages = [
           transition={{ duration: 1 }}
           className="relative z-10 max-w-2xl px-6"
         >
-       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+       <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
   Hotel Interior
-</h1>
+</h2>
 <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6">
   Crafting luxurious, welcoming, and functional hotel spaces that delight every guest.
 </p>
@@ -92,6 +102,7 @@ const hotelImages = [
       {/* Background Transition */}
       <BackgroundImageSwitcher image="/assets/images/hero-slideimg-1.jpeg" />
     </div>
+    </>
   )
 }
 

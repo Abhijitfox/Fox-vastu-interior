@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { Helmet } from "react-helmet-async";
 import Showcase from "../main/aboutus/Showcase";
 import ImageAnimation from "../custom/ImageAnimation";
 import ProjectInquirySection from "../custom/ProjectInquirySection";
@@ -14,6 +14,15 @@ const About = () => {
  
     return (
         <>
+        <Helmet>
+  <title>About Us | VastuVibe Interior Design Experts</title>
+  <meta
+    name="description"
+    content="Learn about VastuVibe, India's trusted luxury interior design studio focused on creativity, elegance, and Vastu-based harmony."
+  />
+  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/about-us" />
+</Helmet>
+
             {/* Hero Background Section */}
               <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <motion.div
@@ -38,9 +47,9 @@ const About = () => {
           transition={{ duration: 1 }}
           className="relative z-10 max-w-2xl px-6"
         >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
   About Vastu Interior
-</h1>
+</h2>
 <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 drop-shadow-md">
   Creating harmonious interiors that blend modern design with timeless Vastu principles.
 </p>
@@ -59,12 +68,12 @@ const About = () => {
 
                     {/* Left Content */}
                     <div className="w-full md:w-1/2 flex flex-col justify-center items-start text-left space-y-4 px- md:px-0">
-  <h1 
+  <h2 
         className="display-3 fw-bold mb-1"
         style={{ color: '#00334d' }}
       >
         About Us
-      </h1>
+      </h2>
 
   <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700">
     Where Imagination Meets Interiors

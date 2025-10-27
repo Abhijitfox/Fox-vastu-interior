@@ -44,6 +44,16 @@ const features = [
 ];
 
   return (
+    <>
+    <Helmet>
+  <title>Project Gallery | VastuVibe Interior Designs</title>
+  <meta
+    name="description"
+    content="Explore our portfolio of luxury interior projects including homes, offices, showrooms, and hospitality designs."
+  />
+  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/gallery" />
+</Helmet>
+
         <div className="w-full overflow-hidden text-gray-800 font-sans">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
@@ -69,9 +79,9 @@ const features = [
           transition={{ duration: 1 }}
           className="relative z-10 max-w-2xl px-6"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
             Vastu Interior Gallery
-          </h1>
+          </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 drop-shadow-md">
             Explore our curated collection of Vastu-compliant interior designs.
           </p>
@@ -98,6 +108,7 @@ const features = [
 
             />   
     </div>
+    </>
   );
 };
 
