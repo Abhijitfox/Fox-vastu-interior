@@ -5,6 +5,7 @@ import ShowroomGallery from "../main/services/ShowroomGallery";
 import ProjectInquirySection from "../custom/ProjectInquirySection";
 import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
 import WhyChooseUsSection from "../custom/WhyChooseUsSection";
+import { Helmet } from "react-helmet-async";
 
 const GalleryPage = () => {
   const fadeInUp = {

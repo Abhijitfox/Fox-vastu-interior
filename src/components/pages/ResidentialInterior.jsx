@@ -6,6 +6,7 @@ import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
 import WhyChooseUsSection2 from "../custom/WhyChooseUsSection2";
 import FeaturesSection from "../custom/FeaturesSection";
 import GallerySection from "../custom/GallerySection";
+import { Helmet } from "react-helmet-async";
 
 const ResidentialInterior = () => {
   

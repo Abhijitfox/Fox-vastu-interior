@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const form = useRef();

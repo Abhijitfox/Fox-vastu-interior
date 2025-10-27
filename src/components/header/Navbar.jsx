@@ -143,7 +143,6 @@ const renderDropdown = (items) => (
         </nav>
       </div>
 
-      {/* Mobile Dropdown */}
    {/* Mobile Dropdown */}
   <div
   className={`md:hidden absolute left-0 w-full bg-white text-black overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
@@ -200,7 +199,7 @@ const renderDropdown = (items) => (
     <Link
       to="/contact-us"
       onClick={() => setMenuOpen(false)}
-      className="m-4 px-5 py-2 bg-[#0b2545] border text-white border-gray-300 rounded-full font-medium text-sm hover:bg-white transition shadow-sm text-center"
+      className="m-4 px-5 py-2 bg-[#0b2545] border text-white border-gray-300 rounded-full font-medium text-sm  transition shadow-sm text-center"
     >
       Let’s Talk
     </Link>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
 import FeaturesSection from '../custom/FeaturesSection';
 import GallerySection from '../custom/GallerySection';
 import WhyChooseUsSection2 from '../custom/WhyChooseUsSection2';
 import ProjectInquirySection from '../custom/ProjectInquirySection';
 import BackgroundImageSwitcher from '../custom/BackgroundImageSwitcher';
+import { Helmet } from 'react-helmet-async';
 const CorporateOfficeInterior = () => {
   const corporateFeatures = [
   {

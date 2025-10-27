@@ -5,6 +5,7 @@ import FeaturesSection from '../custom/FeaturesSection';
 import GallerySection from '../custom/GallerySection';
 import ProjectInquirySection from '../custom/ProjectInquirySection';
 import BackgroundImageSwitcher from '../custom/BackgroundImageSwitcher';
+import { Helmet } from 'react-helmet-async';
 
 const HotelInteriors = () => {
     const hotelFeatures = [
