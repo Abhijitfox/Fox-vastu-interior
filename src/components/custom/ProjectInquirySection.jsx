@@ -16,7 +16,7 @@ const ProjectInquirySection = () => {
             {/* Content */}
             <div className="relative z-10 text-white px-4">
                 <h2 className="text-3xl md:text-6xl font-bold mb-4">
-                    Have a project in mind?
+                    Ready to See Your Home Transform the Way You Imagine It?
                 </h2>
                 <p className="text-lg md:text-2xl mb-8 opacity-90">
                     Do not hesitate to say Vastu Interior

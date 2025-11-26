@@ -7,29 +7,27 @@ import ProjectInquirySection from "../custom/ProjectInquirySection";
 import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
 import { Link } from "react-router-dom";
 
-
 const About = () => {
-             
+  return (
+    <>
+      <Helmet>
+        <title>About Us | Vastu Vibes Design</title>
+        <meta
+          name="description"
+          content="Learn about Vastu Vibes – Pune’s trusted home interior design studio focused on lifestyle-based, functional, and Vastu-aligned interior design."
+        />
+        <link
+          rel="canonical"
+          href="https://playful-cranachan-8efc2c.netlify.app/about-us"
+        />
+      </Helmet>
 
- 
-    return (
-        <>
-        <Helmet>
-  <title>About Us | VastuVibe Interior Design Experts</title>
-  <meta
-    name="description"
-    content="Learn about VastuVibe, India's trusted luxury interior design studio focused on creativity, elegance, and Vastu-based harmony."
-  />
-  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/about-us" />
-</Helmet>
-
-            {/* Hero Background Section */}
-              <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+      {/* HERO SECTION — TEXT FROM WORD FILE */}
+      <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('assets/images/footerimg.jpeg')",
+            backgroundImage: "url('assets/images/footerimg.jpeg')",
           }}
           initial={{ scale: 1 }}
           animate={{ scale: 1.08 }}
@@ -41,91 +39,95 @@ const About = () => {
           }}
         />
         <div className="absolute inset-0 bg-black/50"></div>
+
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 max-w-2xl px-6"
+          className="relative z-10 max-w-3xl px-6"
         >
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-  About Vastu Interior
-</h2>
-<p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 drop-shadow-md">
-  Creating harmonious interiors that blend modern design with timeless Vastu principles.
-</p>
+          <h2 className="text-4xl sm:text-5xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+            Vastu Vibes — Home Interior Designer in Pune That Turns Your Daily Life Into a Comfort Experience.
+          </h2>
 
-            <Link
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 drop-shadow-md">
+            Every home has a story. At Vastu Vibes, we design spaces that simplify your routines, calm your mind, and finally make your home feel like you.
+          </p>
+
+          <Link
             to="/contact-us"
             className="inline-block px-8 py-3 bg-white text-[#0b2545] rounded-full font-semibold hover:bg-white/90 transition"
           >
-            Let’s Talk
+            Book Your Free Consultation Today
           </Link>
         </motion.div>
       </section>
-            {/* About Section */}
-            <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 bg-white">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-12 lg:gap-20 max-w-7xl mx-auto pt-10">
 
-                    {/* Left Content */}
-                    <div className="w-full md:w-1/2 flex flex-col justify-center items-start text-left space-y-4 px- md:px-0">
-  <h2 
-        className="display-3 fw-bold mb-1"
-        style={{ color: '#00334d' }}
-      >
-        About Us
-      </h2>
+      {/* ABOUT SECTION — ENTIRELY WORD-FILE CONTENT */}
+      <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 bg-white">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-12 lg:gap-20 max-w-7xl mx-auto pt-10">
+          {/* LEFT CONTENT */}
+          <div className="w-full md:w-1/2 flex flex-col items-start text-left space-y-4">
+            <h2 className="text-4xl font-bold" style={{ color: "#00334d" }}>
+              About Us
+            </h2>
 
-  <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700">
-    Where Imagination Meets Interiors
-  </p>
+            <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700">
+              Understanding Your Lifestyle, Not Just Your Likes
+            </p>
 
-  <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md md:max-w-lg">
-    We design spaces that reflect your personality and create harmony
-    between aesthetics and comfort. Our expert designers turn your
-    vision into timeless interiors tailored to your lifestyle.
-  </p>
-</div>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md md:max-w-lg">
+              We start our process by understanding the details of how you live, not just what you like. 
+              That means your daily routines, your family’s requirements, your storage habits, 
+              and your preferred vibe.
+            </p>
 
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md md:max-w-lg">
+              We strike the right balance between aesthetics, function, and Vastu principles (if desired), 
+              providing you with a home that feels right, not just looks good.
+            </p>
 
-                    {/* Right Image Section */}
-                            <ImageAnimation
-                                images={[
-                                    "/assets/images/section-1-1.jpeg",
-                                    "/assets/images/section-1-2.jpeg",
-                                    "/assets/images/section-1-3.jpeg",
-                                ]}
-                            />
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md md:max-w-lg">
+              We will provide 3D visuals with a clear, stage-wise plan, and we’ll explain the cost implications
+              of material or design choices upfront.
+            </p>
+          </div>
 
-                </div>
-               <p className="mt-6 text-[#4F696B] text-[16px] leading-relaxed tracking-wide ">
-  Renovatio, we believe that every space has the potential to be transformed
-  into a work of art. With a passion for design and a commitment to excellence,
-  we strive to create captivating interiors that reflect the unique
-  personalities and aspirations of our clients. Our team of talented designers,
-  architects, and craftsmen collaborates closely with each client to understand
-  their vision and bring it to life. Whether it’s a residential project,
-  commercial space, or a hospitality establishment, we approach each project
-  with creativity, professionalism, and a commitment to excellence. Our
-  portfolio showcases a diverse range of projects that highlight our versatility
-  and ability to adapt to different design styles and requirements. What sets us
-  apart is our attention to detail and our commitment to delivering exceptional
-  results. We meticulously plan every aspect of the design process, from space
-  planning and furniture selection to material choices and lighting design. Our
-  goal is to create harmonious environments that not only inspire but also
-  enhance the daily lives of those who inhabit them.
-</p>
+          {/* RIGHT IMAGE SECTION */}
+          <ImageAnimation
+            images={[
+              "/assets/images/section-1-1.jpeg",
+              "/assets/images/section-1-2.jpeg",
+              "/assets/images/section-1-3.jpeg",
+            ]}
+          />
+        </div>
 
-<Showcase/>
-            </div>
-            <ProjectInquirySection   />
+        {/* ADDITIONAL WORD FILE CONTENT */}
+        <p className="mt-6 text-[#4F696B] text-[16px] leading-relaxed tracking-wide max-w-5xl mx-auto">
+          Many homeowners in Pune struggle with making their home feel truly theirs — mismatched furniture,
+          layouts that don’t support lifestyle, hidden costs, changing deadlines, and uncertainty about balancing 
+          Vastu with modern design. This is why people trust Vastu Vibes: we help you create a home that feels 
+          personal, balanced, and intelligently designed.
+        </p>
 
- <BackgroundImageSwitcher
-                image="/assets/images/bg-1.jpeg"
+        <p className="mt-4 text-[#4F696B] text-[16px] leading-relaxed tracking-wide max-w-5xl mx-auto">
+          From smart space planning, customised furniture, well-planned lighting, false ceilings, kitchen and wardrobe 
+          design, styling, and final touches — we handle everything end-to-end so you don’t have to coordinate 
+          with multiple vendors. Our local expertise, transparency, and on-time execution ensure a smooth journey from 
+          concept to handover.
+        </p>
 
-            />
- 
-        </>
-    );
+        <Showcase />
+      </div>
+
+      {/* CONTACT CTA */}
+      <ProjectInquirySection />
+
+      {/* BACKGROUND TRANSITION */}
+      <BackgroundImageSwitcher image="/assets/images/bg-1.jpeg" />
+    </>
+  );
 };
 
 export default About;

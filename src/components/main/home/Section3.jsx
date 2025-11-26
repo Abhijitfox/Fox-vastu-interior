@@ -1,176 +1,191 @@
 import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography } from "@mui/material"; // removed Grid import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobeAfrica } from "@fortawesome/free-solid-svg-icons";
 import {
-  faArtstation,
-  faDigitalOcean,
-  faCreativeCommonsSa,
-} from "@fortawesome/free-brands-svg-icons";
+  faUserCheck,
+  faFileInvoiceDollar,
+  faStarHalfAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const steps = [
   {
     id: 1,
-    icon: faGlobeAfrica,
-    title: "Initial Consultation",
-    desc: "The process begins with an initial consultation where a representative from Inspired Interiors meets with the client to discuss their project requirements, goals, and vision.",
+    icon: faUserCheck,
+    title: "“Designers never understand what I want.”",
+    desc: "We conduct our first meeting to understand your daily routine, preferences, and energy needs. We don't make any assumptions, only listen.",
   },
   {
     id: 2,
-    icon: faArtstation,
-    title: "Project Assessment and Space Analysis",
-    desc: "The design team conducts a thorough assessment of the space, taking measurements, photographs, and gathering any relevant architectural drawings or floor plans.",
+    icon: faFileInvoiceDollar,
+    title: "“I’m scared of hidden costs.”",
+    desc: "Every proposal we give is 100% transparent and includes factors such as materials, labor, and timeline. You’ll never find a surprise or hidden costs on your bill.",
   },
   {
     id: 3,
-    icon: faDigitalOcean,
-    title: "Design Concept Development",
-    desc: "Based on the client's preferences and the information gathered during the assessment, Inspired Interiors develops a design concept.",
-  },
-  {
-    id: 4,
-    icon: faCreativeCommonsSa,
-    title: "Design Presentation and Approval",
-    desc: "Inspired Interiors presents the design concept and space plans to the client, utilizing visual aids such as 3D renderings, sketches, and material samples.",
+    icon: faStarHalfAlt,
+    title: "“I don’t want my space to look like everyone else’s.”",
+    desc: "Good. We don’t do cookie-cutter work. We customize design concepts to your lifestyle and Vastu alignment, not Pinterest trends.",
   },
 ];
 
 const Section3 = () => {
   return (
     <Box
+      id="pain-points"
       sx={{
         width: "100%",
-        py: { xs: 6, md: 10 },
-        backgroundColor: "#fff",
+        py: { xs: 6, md: 12 },
+        background: "linear-gradient(180deg, #f7fbfd 0%, #ffffff 60%)",
       }}
     >
-      <Grid
-        container
-        justifyContent={{ xs: "center", md: "space-between" }}
-        alignItems={{ xs: "center", md: "flex-start" }}
+      {/* Heading */}
+      <Typography
+        variant="h2"
         sx={{
-          maxWidth: "1200px",
+          mb: { xs: 5, md: 8 },
+          fontWeight: 800,
+          textAlign: "center",
+          fontSize: { xs: "1.6rem", sm: "2rem", md: "2.6rem" },
+          color: "#0b2545",
+          lineHeight: 1.15,
+          px: 2,
+        }}
+      >
+        What are The Pain Points We Solve?
+      </Typography>
+
+      {/* FLEX ROW: force 3 cards in a single row */}
+      <Box
+        sx={{
+          display: "flex",
+          gap: { xs: 2, md: 3 },
+          justifyContent: "center",
+          alignItems: "stretch",
           mx: "auto",
           px: { xs: 2, sm: 4 },
-          textAlign: { xs: "center", md: "center" },
+          maxWidth: 1180,
+          // prevent wrapping so all three stay in one row
+          flexWrap: "nowrap",
+          // allow shrinking on very small screens but prefer all-in-one row
+          overflowX: { xs: "auto", md: "visible" },
         }}
       >
         {steps.map((step) => (
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={3}
+          <Box
             key={step.id}
             sx={{
+              // each card takes one-third of the available width
+              flex: "0 0 calc(33.333% - 16px)",
+              maxWidth: 380,
+              minWidth: 260,
+              p: { xs: 2, md: 3 },
+              borderRadius: 3,
+              background: "rgba(255,255,255,0.78)",
+              backdropFilter: "blur(6px)",
+              border: "1px solid rgba(15,23,42,0.06)",
+              boxShadow: "0 8px 24px rgba(2,6,23,0.06)",
+              textAlign: "center",
               position: "relative",
-              zIndex: 2,
+              transition: "transform .24s ease, box-shadow .24s ease",
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 18px 40px rgba(2,6,23,0.12)",
+              },
               display: "flex",
               flexDirection: "column",
-              alignItems: { xs: "center", md: "center" },
-              justifyContent: { xs: "center", md: "flex-start" },
-              textAlign: { xs: "center", md: "center" },
-              px: { xs: 0, sm: 3, md: 0 },
-              mb: { xs: 6, md: 0 },
+              alignItems: "center",
+              gap: 1.5,
             }}
           >
-            {/* Icon Circle */}
+            {/* Icon circle */}
             <Box
               sx={{
-                position: "relative",
-                mb: 2,
+                width: { xs: 64, md: 76 },
+                height: { xs: 64, md: 76 },
+                borderRadius: "50%",
+                background: "linear-gradient(135deg,#fff,#f1f5f9)",
                 display: "flex",
-                justifyContent: "center",
                 alignItems: "center",
+                justifyContent: "center",
+                mb: 1,
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.6)",
+                flexShrink: 0,
               }}
             >
               <Box
                 sx={{
-                  width: 80,
-                  height: 80,
+                  width: { xs: 40, md: 46 },
+                  height: { xs: 40, md: 46 },
                   borderRadius: "50%",
-                  backgroundColor: "#0b2a4a",
+                  backgroundColor: "#0b2545",
+                  color: "#fff",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "#fff",
-                  fontSize: "32px",
-                  mx: "auto",
+                  fontSize: { xs: 16, md: 18 },
                 }}
               >
                 <FontAwesomeIcon icon={step.icon} />
               </Box>
+            </Box>
 
-              {/* Number bubble */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "-10px",
-                  right: { xs: "calc(50% - 10px)", md: "-10px" },
-                  transform: { xs: "translateX(50%)", md: "none" },
-                  width: 26,
-                  height: 26,
-                  borderRadius: "50%",
-                  backgroundColor: "#0b2a4a",
-                  color: "#fff",
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
-                }}
-              >
-                {step.id}.
-              </Box>
+            {/* Number badge */}
+            <Box
+              sx={{
+                position: "absolute",
+                top: 12,
+                left: 12,
+                width: 30,
+                height: 30,
+                borderRadius: "50%",
+                backgroundColor: "#7dd3fc",
+                color: "#0b2545",
+                fontWeight: 700,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 6px 14px rgba(13,71,90,0.08)",
+                fontSize: 13,
+              }}
+            >
+              {step.id}
             </Box>
 
             {/* Title */}
             <Typography
               variant="h6"
               sx={{
-                fontWeight: 600,
-                mb: 1,
-                color: "#0b2a4a",
-                fontSize: "1.05rem",
+                mt: 0,
+                fontWeight: 700,
+                color: "#083047",
+                fontSize: { xs: "0.97rem", md: "1.02rem" },
                 textAlign: "center",
-                maxWidth: { xs: "90%", md: "100%" },
+                px: 1,
               }}
             >
               {step.title}
             </Typography>
 
+            {/* push desc to bottom for alignment */}
+            <Box sx={{ flexGrow: 1 }} />
+
             {/* Description */}
             <Typography
               variant="body2"
               sx={{
-                color: "#444",
+                mt: 1,
+                color: "#55606a",
                 lineHeight: 1.6,
-                maxWidth: { xs: "90%", sm: "260px" },
-                textAlign: "center",
-                mx: "auto",
+                fontSize: { xs: "0.84rem", md: "0.92rem" },
+                maxWidth: 320,
+                px: 1,
               }}
             >
               {step.desc}
             </Typography>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
-
-      {/* Section Heading */}
-      <Typography
-        variant="h2"
-        sx={{
-          mt: { xs: 8, md: 12 },
-          fontWeight: 700,
-          textAlign: "center",
-          fontSize: { xs: "2rem", sm: "2.8rem", md: "4rem" },
-          color: "#0b2a4a",
-          lineHeight: 1.2,
-        }}
-      >
-        Project Timeline and <br /> Execution
-      </Typography>
+      </Box>
     </Box>
   );
 };

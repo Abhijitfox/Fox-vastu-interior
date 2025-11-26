@@ -3,29 +3,30 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CustomCarousel from "../custom/CustomCarousel";
-import ProjectInquirySection from "../custom/ProjectInquirySection";
-import Section1 from "../main/home/Section1";
-import Section2 from "../main/home/Section2";
-import Section3 from "../main/home/Section3";
-import ScrollTextBridge from "../custom/ScrollTextBridge";
-import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
-
-
-
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
     faFacebookF,
     faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+
+// Components
 import CustomDots from "../custom/CustomDots";
+import ProjectInquirySection from "../custom/ProjectInquirySection";
+import ScrollTextBridge from "../custom/ScrollTextBridge";
+import BackgroundImageSwitcher from "../custom/BackgroundImageSwitcher";
+import Section1 from "../main/home/Section1";
+import Section2 from "../main/home/Section2";
+import Section3 from "../main/home/Section3";
+import ServicesSection from "../main/home/ServicesSection"; // New Component
+import WhyChooseSection from "../main/home/WhyChooseSection"; // New Component
+import CustomCarousel from "../custom/CustomCarousel";
 
 const slides = [
     {
         id: 1,
-        title: "Creating Harmony Through Design",
-        text: "Interior design aims to create spaces that not only look visually appealing but also enhance the well-being and quality of life.",
+        title: "Vastu Vibes Design-Pune’s Soulful Interior Decorators That Create Spaces with Purpose",
+        text: "Because every space has energy — we simply give it direction.",
         image: "/assets/images/hero-slideimg-1.jpeg",
     },
     {
@@ -37,13 +38,13 @@ const slides = [
     {
         id: 3,
         title: "Discover the Art of Living",
-        text: "Interior design aims to create spaces that not only look visually appealing but also enhance the well-being and quality of life.",
+        text: "We design around you, how you move, think, work, and live, then combine it all with the timeless flow of Vastu energy.",
         image: "/assets/images/hero-slideimg-3.jpeg",
     },
     {
         id: 4,
         title: "Your Space, Your Signature Style",
-        text: "Interior design is the art and science of enhancing the interior spaces of buildings to achieve a more functional.",
+        text: "That’s how every project begins: not with colors or furniture, but with your story.",
         image: "/assets/images/hero-slideimg-4.jpeg",
     },
     {
@@ -75,22 +76,21 @@ export default function HeroSection() {
     const prevSlide = () =>
         setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
-     const handleScroll = () => {
-    const next = document.getElementById("inquiry-section");
-    next?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
+    const handleScroll = () => {
+        const next = document.getElementById("section1-anchor");
+        next?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
 
     return (
         <>
-<Helmet>
-  <title>VastuVibe | Luxury & Vastu Interior Designers in India</title>
-  <meta
-    name="description"
-    content="VastuVibe specializes in luxury, modern, and Vastu-aligned interior designs for homes, showrooms, offices, and hotels across India."
-  />
-  <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/" />
-</Helmet>
+            <Helmet>
+                <title>Vastu Vibes Design | Best Residential Interior Designers in Pune</title>
+                <meta
+                    name="description"
+                    content="Vastu Vibes Design - Pune’s Soulful Interior Decorators. We create spaces with purpose, blending modern aesthetics with Vastu energy."
+                />
+                <link rel="canonical" href="https://playful-cranachan-8efc2c.netlify.app/" />
+            </Helmet>
 
             <div className="relative w-full h-screen overflow-hidden bg-black">
                 {/* Background images */}
@@ -130,7 +130,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, x: 100 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
+                            className="text-2xl sm:text-4xl md:text-5xl lg:text-4xl font-bold leading-tight"
                         >
                             {slides[current].title}
                         </motion.h1>
@@ -148,22 +148,18 @@ export default function HeroSection() {
                     </div>
 
                     {/* Right scroll down */}
-                    <div    
-                        className="md:flex hidden  flex-col justify-center items-center text-white space-y-4 sm:space-y-6 md:space-y-12 lg:space-y-16">
+                    <div className="md:flex hidden  flex-col justify-center items-center text-white space-y-4 sm:space-y-6 md:space-y-12 lg:space-y-16">
                         <FontAwesomeIcon
-                        onClick={handleScroll}
-
+                            onClick={handleScroll}
                             icon={faArrowDown}
                             className="text-sm sm:text-lg md:text-xl lg:text-2xl animate-bounce cursor-pointer"
                         />
                         <div
-                         onClick={handleScroll}
-
-                        className="text-[8px] sm:text-[10px] md:text-sm tracking-widest uppercase rotate-90 cursor-pointer">
+                            onClick={handleScroll}
+                            className="text-[8px] sm:text-[10px] md:text-sm tracking-widest uppercase rotate-90 cursor-pointer">
                             SCROLL DOWN
                         </div>
                     </div>
-
                 </div>
 
                 {/* Bottom left dots */}
@@ -185,17 +181,18 @@ export default function HeroSection() {
                     </button>
                 </div>
             </div>
-            <Section1 />
+
+            <div id="section1-anchor">
+                <Section1 />
+            </div>
             <ScrollTextBridge />
             <Section2 />
             <CustomCarousel />
             <Section3 />
+            <ServicesSection />
+            <WhyChooseSection />
             <ProjectInquirySection />
-            <BackgroundImageSwitcher
-                image="/assets/images/bg-1.jpeg"
-
-            />
-
+            <BackgroundImageSwitcher image="/assets/images/bg-1.jpeg" />
         </>
     );
 }
